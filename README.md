@@ -1,14 +1,24 @@
-# Redis Movies 
+# Spring Redis Movies 
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/redis-projects/redis-movies)
-
-This project contains multiple resources to explore and use Redis Search + Redis JSON
+This project contains multiple resources to explore and use SpringBoot + RediSearch + Redis JSON
 
 High level arch: 
 !["Redis Movies Overview"](./resources/images/architecture.png)
 
+## Building and Running in Gitpod
 
-### Working with Docker
+Gitpod can spin up a fully featured developer friendly environment with both Visual Studio and Spring Redis Movies application running for you.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/redis-projects/redis-movies)
+
+1. Once the environment is available, the projects will compile, build containers and start with docker compose
+2. You can use the Gitpod Visual Studio `TERMINAL` window to use docker compose as instructed below.
+3. Wait a minute or so and Gitpod will detect the ports from the application (80, with an Nginx reverse proxy in front of the SpringBoot application on port 8080) and RedisInsight (8001) for you to access over the Gitpod web routing. You can check in the Gitpod Visual Studio `PORTS` window.
+4. Make sure to select the `Open Browser` to open those.
+5. Note: as we are loading ~10000 movies, the application may show empty while this loads. Make sure to refresh or check with RedisInsight.
+
+
+## Working with Docker
 
 There is a docker compose script which will bootstrap all the components required to make this demo work.
 
