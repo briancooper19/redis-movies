@@ -17,7 +17,7 @@ import java.util.List;
 public class Movie {
 
     @Id
-    private long id;
+    private String id;
 
     @TagIndexed
     @SerializedName(value = "imdbId", alternate = "imdb_id")

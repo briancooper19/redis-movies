@@ -16,5 +16,5 @@ public enum FieldTypeENUM {
         this.delimiterStart = delimiterStart;
         this.delimiterEnd = delimiterEnd;
     }
-
+    
 }

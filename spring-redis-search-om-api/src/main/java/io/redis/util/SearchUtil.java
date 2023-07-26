@@ -7,7 +7,7 @@ import io.redis.model.MovieQueryFilter;
 import io.redis.type.FieldENUM;
 import io.redis.type.FieldTypeENUM;
 import io.redis.type.OperatorENUM;
-import io.redisearch.SearchResult;
+//import io.redisearch.SearchResult;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -175,7 +175,7 @@ public class SearchUtil {
      * @param searchResult
      * @return
      */
-    public List<Movie> convertToPageableObject(SearchResult searchResult) {
+/*    public List<Movie> convertToPageableObject(SearchResult searchResult) {
         List<Movie> movies = new ArrayList<>();
         searchResult.docs.stream().forEach(d -> {
             d.getProperties().forEach(e -> {
@@ -185,7 +185,7 @@ public class SearchUtil {
             });
         });
         return movies;
-    }
+    }*/
 
     /**
      * Really Basic Redis Search Query Builder

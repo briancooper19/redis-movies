@@ -22,7 +22,6 @@ public enum SortValueENUM {
     private String sortValue;
 
     public static SortValueENUM fromString(String s) throws IllegalArgumentException {
-
         return Arrays.stream(SortValueENUM.values())
                 .filter(v ->  v.name().equalsIgnoreCase(s))
                 .findFirst()

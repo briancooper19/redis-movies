@@ -2,7 +2,6 @@ package io.redis.configuration;
 
 import com.redis.om.spring.client.RedisModulesClient;
 import io.redis.model.Movie;
-import io.redisearch.Client;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -12,6 +11,7 @@ import org.springframework.web.reactive.function.client.ExchangeFilterFunction;
 import org.springframework.web.reactive.function.client.ExchangeStrategies;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
+import redis.clients.jedis.search.RediSearchCommands;
 
 import javax.net.ssl.SSLException;
 
@@ -31,10 +31,10 @@ public class RedisConfiguration {
      * @return
      */
     @Bean
-    public Client getRedisSearchClient(RedisModulesClient rmc) {
+    public RediSearchCommands getRedisSearchClient(RedisModulesClient rmc) {
         String index = Movie.class.getName() + "Idx";
         log.info("Boostrapping RedisSearchClient for Index: {}", index);
-        return rmc.clientForSearch(index);
+        return rmc.clientForSearch();
     }
 
     private static ExchangeFilterFunction logRequest() {
