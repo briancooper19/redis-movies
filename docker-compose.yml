@@ -24,6 +24,7 @@ services:
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
+      - REDIS_PASSWORD=
       - MOVIE_INSERT_ON_STARTUP=true
       - MOVIE_DATA_DIR=./
     ports:
