@@ -35,6 +35,34 @@ movie-service  | 2022-11-07 16:19:35.445  INFO 1 --- [main] io.redis.configurati
 movie-service  | 2022-11-07 16:19:47.184  INFO 1 --- [main] io.redis.configuration.DataLoader        : Finished loading data into Redis
 ```
 
+## Working with Redis Enterprise Cloud or Azure Cache Redis Enterprise
+
+You can also provision your Redis database with [Redis Enterprise Cloud](https://redis.com/redis-enterprise-cloud/overview/) or Azure Cache for Redis Enterprise.
+
+1. Create your [free trial](https://redis.com/try-free/) for Redis Enterprise Cloud
+2. Edit the `docker-compose.yml` to remove the Redis Stack container and the `redis` container dependency
+3. Change the environment variables to fit with your deployment for the Redis host, port and password
+```
+  # Java Movie Service
+  backend:
+    image: movie-backend:latest
+    container_name: backend
+    #depends_on:
+    #  - redis
+    #links:
+    #  - "redis:redis"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - REDIS_HOST=ava.northeurope.redisenterprise.cache.azure.net
+      - REDIS_PORT=10000
+      - REDIS_PASSWORD=iruJTVbObd8XWyR1J4bgE35esZCRjO9qreHd6m6j7jM=
+      - MOVIE_INSERT_ON_STARTUP=true
+      - MOVIE_DATA_DIR=./
+```
+
+
 ## Working with Projects locally
 
 ---
