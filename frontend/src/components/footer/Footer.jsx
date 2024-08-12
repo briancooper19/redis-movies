@@ -25,10 +25,10 @@ const Footer = () => {
                         <Link to="/">About this demo!</Link>
                     </div>
                     <div className="footer__content__menu">
-                        <a href="https://redis.io/docs/stack/" target="_blank" rel="noopener noreferrer">Redis Stack</a>
+                        <a href="https://redis.com/" target="_blank" rel="noopener noreferrer">Redis Enterprise</a>
                         <a href="https://redis.io/docs/stack/json/" target="_blank" rel="noopener noreferrer">Redis JSON</a>
                         <a href="https://redis.io/docs/stack/search/" target="_blank" rel="noopener noreferrer">Redis Search</a>
-                        <a href="https://redis.com/" target="_blank" rel="noopener noreferrer">Redis Enterprise</a>
+                        <a href="https://redis.io/redis-enterprise/advantages/" target="_blank" rel="noopener noreferrer">Redis Rocks!!</a>
                     </div>
                 </div>
             </div>
